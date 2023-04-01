@@ -1,0 +1,46 @@
+// **** Colors ****
+
+$font-color: #0d393c;
+$background-color: #f6f5ee;
+$backgrount-transparent-color: #ffffffd3;
+$shadow-color: #999;
+
+// **** Fonts ****
+
+$main-font-family: "Fredoka", sans-serif;
+$header-font-family: "Kristi", cursive;
+
+// **** Sizes ****
+
+$main-font-style: 14px;
+$main-line-height: 22px;
+
+$logo-font-style: 3rem;
+$logo-line-height: 4.5rem;
+
+$title-font-style: 3rem;
+$title-font-style--mobile: 4rem;
+$title-line-height: 4.5rem;
+
+$subtitle-font-style: 2rem;
+$subtitle-line-height: 2.5rem;
+
+$main-padding: 15px;
+
+// **** Media Queries ****
+
+@mixin devices($breakpoint) {
+   //the name of the mixin is devices
+
+   @if $breakpoint ==tablet {
+      @media only screen and (min-width: 680px) {
+         @content;
+      }
+   }
+
+   @if $breakpoint ==mobile {
+      @media only screen and (min-width: 421px) {
+         @content;
+      }
+   }
+}
