@@ -2,12 +2,14 @@
 
 import contentObj from "./content.js";
 
-document.addEventListener("DOMContentLoaded", generateSidebarList);
+document.addEventListener("DOMContentLoaded", createSidebarList);
 
-function generateSidebarList() {
+function createSidebarList() {
+
    const sideNav = document.querySelector(".sidenav");
    const list = document.createElement("ul");
    list.classList.add("sidenav__list");
+
    const listHtml = contentObj
       .map((item) => {
          return `<li>
@@ -19,29 +21,37 @@ function generateSidebarList() {
       .join("");
    list.innerHTML = listHtml;
    sideNav.append(list);
-   sideNav.addEventListener("click", changeContentItem);
+   sideNav.addEventListener("click", handleSidebarItemClick);
 }
 
-function changeContentItem(event) {
+function handleSidebarItemClick(event) {
+
    const burgerButton = document.querySelector(".burger__button");
    const sideNavList = document.querySelector(".sidenav__list");
+   if (!sideNavList) return;
+
    if (event.target.closest(".sidenav__item")) {
       const currentItem = event.target.closest(".sidenav__item");
+
       if (!currentItem.classList.contains("active")) {
          const activeItem = sideNavList.querySelector(".active");
          if (activeItem) activeItem.classList.remove("active");
          currentItem.classList.add("active");
-         renderContent(currentItem.id);
+         displayContent(currentItem.id);
       }
+
       event.preventDefault();
       burgerButton.click();
    }
 }
 
-function renderContent(contentId) {
+function displayContent(contentId) {
 
-   const newContent = contentObj.find(el => el.id === contentId);
+   const newContent = contentObj.find((el) => el.id === contentId);
+   if (!newContent) return;
+
    const contentSection = document.querySelector(".content__seciton");
+   if (!contentSection) return;
 
    contentSection.innerHTML = `
       <h2 class="content__title">${newContent.styleTitle}</h2>
