@@ -1,4 +1,4 @@
-@import "reset", "variables";
+@import "variables", "reset";
 
 html {
    font-size: $main-font-style;
@@ -180,7 +180,7 @@ body {
    &__seciton {
       grid-column: 2/3;
       display: grid;
-      grid-template: repeat(5, auto) / repeat(3, 1fr);
+      grid-template: 80px repeat(4, auto) / repeat(3, 1fr);
       gap: $main-padding;
    }
 

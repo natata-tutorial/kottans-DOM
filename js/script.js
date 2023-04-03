@@ -22,6 +22,7 @@ function createSidebarList() {
    list.innerHTML = listHtml;
    sideNav.append(list);
    sideNav.addEventListener("click", handleSidebarItemClick);
+
 }
 
 function handleSidebarItemClick(event) {
@@ -43,6 +44,7 @@ function handleSidebarItemClick(event) {
       event.preventDefault();
       burgerButton.click();
    }
+
 }
 
 function displayContent(contentId) {
@@ -58,6 +60,7 @@ function displayContent(contentId) {
       <img
          class="content__picture"
          src="${newContent.stylePicture}"
+         alt="${newContent.styleTitle}"
          />
       <div class="content__text">
       ${newContent.styleDescription}
