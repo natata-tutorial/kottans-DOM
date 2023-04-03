@@ -2,11 +2,13 @@
 
 - task is [here](https://github.com/kottans/frontend/blob/2022_UA/tasks/js-dom.md)
 
-- you can find page [here](https://natata-tutorial.github.io/kottans-DOM/)
+[Demo](https://natata-tutorial.github.io/kottans-DOM/) | [Code Base](https://github.com/natata-tutorial/kottans-DOM) | [PR](https://github.com/kottans/frontend-2022-homeworks/pull/757)
 
 # Useful links
 
 [JAVASCRIPT СОБЫТИЯ. addEventListener делегирование. Cобытия мыши клавиатуры загрузки сайта. Практика](https://www.youtube.com/watch?v=bWCzbR5DvCo&t=1062s)
+
+[Деструктуризация объекта](https://learn.javascript.ru/destructuring-assignment#destrukturizatsiya-obekta)
 
 ## Спецификации:
 
