@@ -3,7 +3,6 @@
 import contentObj from "./content.js";
 
 const burgerButton = document.querySelector(".burger__button");
-const sideNav = document.querySelector(".sidenav");
 const list = document.querySelector(".sidenav__list");
 const contentSection = document.querySelector(".content__seciton");
 
@@ -23,25 +22,23 @@ function createSidebarList() {
 
       list.innerHTML = listHtml;
 
-      sideNav.addEventListener("click", handleSidebarItemClick);
+      list.addEventListener("click", handleSidebarItemClick);
    }
 }
 
 function handleSidebarItemClick(event) {
    const currentItem = event.target.closest(".sidenav__item");
 
-   if (currentItem) {
-      if (!currentItem.classList.contains("active")) {
-         const activeItem = this.querySelector(".active");
+   if (!currentItem.classList.contains("active")) {
+      const activeItem = this.querySelector(".active");
 
-         if (activeItem) activeItem.classList.remove("active");
+      if (activeItem) activeItem.classList.remove("active");
 
-         currentItem.classList.add("active");
-         const newContent = contentObj.find((el) => el.id === currentItem.id);
+      currentItem.classList.add("active");
+      const newContent = contentObj.find((el) => el.id === currentItem.id);
 
-         if (newContent) {
-            renderContent(newContent);
-         }
+      if (newContent) {
+         renderContent(newContent);
       }
    }
 
